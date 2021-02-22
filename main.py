@@ -16,9 +16,24 @@ url_conn = requests.get(name_url)
 
 #Verifico se a conexão foi bem sucedida
 if url_conn.status_code == 200:
-  print(f'Conexão bem sucedida com o site {url_conn}')
+  #Printa a msg de conexão bem sucedida
+  print(f'Conexão bem sucedida com o site {name_url}')
+  #Salva na variavel o conteudo html do site
+  txt_site = url_conn.text
 else:
+  #Print a msg abaixo, caso haja algum erro na conexão
   print('Site FORA DO AR!')
+
+
+#HORA DE FAZER A SOPA!
+
+#Salvo na váriavel soup, o html do site, que foi
+#pego na váriavel txt_site
+soup = BeautifulSoup(txt_site, 'html.parser')
+
+
+
+
 
 
 
